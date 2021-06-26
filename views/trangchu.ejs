@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Chat</title>
+    <script src="jquery.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="xuly.js"></script>
+    <link rel="stylesheet" type="text/css" href="layout.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="loginForm">
+        <div id="clickAPI">
+          <h3>Bạn tên là gì?</h3>
+        </div>
+        <input type="text" id="txtUsername" />
+        <input type="button" value="Register" id="btnRegister" />
+      </div>
+      <div id="chatForm">
+        <div id="left">
+          <div id="boxTile">User Online</div>
+          <div id="boxContent"></div>
+        </div>
+        <div id="right">
+          <div id="sayHi">
+            Hello
+            <span id="currentUser">Dev</span>
+            <input type="button" value="Logout" id="btnLogout" />
+          </div>
+          <div id="listMessage"></div>
+
+          <input type="text" id="iputMess" />
+          <input type="button" id="btnSend" value="Send" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

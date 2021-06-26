@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+      var socket = io("localhost:3000");
+
+      // socket.on("Server-send-data", function (data) {
+      //   $("#noidung").append(data + ",");
+      // });
+      socket.on("Server-send-mau", function (data) {
+        $("body").attr("bgColor", data);
+      });
+
+      $(document).ready(function () {
+        // $("#mrA").click(function () {
+        //   //   alert(1);
+        //   socket.emit("Client-send-data", "Helloxx");
+        // });
+        $("#do").click(function () {
+          //   alert(1);
+          socket.emit("Client-send-mau", "Red");
+        });
+        $("#xanh").click(function () {
+          //   alert(1);
+          socket.emit("Client-send-mau", "Green");
+        });
+        $("#vang").click(function () {
+          //   alert(1);
+          socket.emit("Client-send-mau", "Yellow");
+        });
+      });
+    </script>
+    <style>
+      #do,
+      #xanh,
+      #vang {
+        width: 300px;
+        height: 70px;
+      }
+      #do {
+        background-color: red;
+      }
+      #xanh {
+        background-color: green;
+      }
+      #vang {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body bgcolor="pink">
+    <!-- <div id="mrA">Click send</div>
+    <h2 id="noidung"></h2> -->
+
+    <div id="do"></div>
+    <div id="xanh"></div>
+    <div id="vang"></div>
+  </body>
+</html>
